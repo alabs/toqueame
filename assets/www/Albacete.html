@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Albacete</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:967224011">[Albacete] Arquitecto Vandelvira, 24</a>
+<a class="llama" rel="tel:967502778">[Albacete] Av. España, 2-4</a>
+<a class="llama" rel="tel:967550116">[Albacete] C/ Arquitecto Julio Carrilero</a>
+<a class="llama" rel="tel:967193010">[Albacete] C/ Hermanos Falcó, 4</a>
+<a class="llama" rel="tel:967225508">[Albacete] Feria, 47</a>
+<a class="llama" rel="tel:967191313">[Albacete] Fundación Campollano (Pol. Ind. Campollano, Calle C)</a>
+<a class="llama" rel="tel:967217751">[Albacete] Jose Isbert, 1</a>
+<a class="llama" rel="tel:967213091">[Albacete] Marques de Molins, 8</a>
+<a class="llama" rel="tel:967193840">[Albacete] Marques de Molins, 8 Planta 2 Planta 2</a>
+<a class="llama" rel="tel:967590481">[Albacete] Paseo Circunvalacion, 92</a>
+<a class="llama" rel="tel:967550112">[Albacete] Paseo de Pedro Simón Abril, 2</a>
+<a class="llama" rel="tel:967193044">[Albacete] Pza. del Altozano, 4</a>
+<a class="llama" rel="tel:967345462">[Almansa] Corredera, 62</a>
+<a class="llama" rel="tel:967318008">[Almansa] Rambla de La Mancha, 18</a>
+<a class="llama" rel="tel:967410053">[Elche de la Sierra] Av. de España, 1</a>
+<a class="llama" rel="tel:967543025">[Hellin] C/ Juan XXIII, 1</a>
+<a class="llama" rel="tel:967548003">[La Roda] C/ Mártires, 6</a>
+<a class="llama" rel="tel:967325079">[Tobarra] C/ Mayor, 122</a>
+<a class="llama" rel="tel:967138002">[Villarrobledo] C/ Graciano Atienza, 17</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

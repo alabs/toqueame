@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Murcia</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:968493477">[Aguilas] C/ Isaac Peral, 11</a>
+<a class="llama" rel="tel:968896046">[Alcantarilla] Pza. de la Constitución, 2</a>
+<a class="llama" rel="tel:968688337">[Archena] Av. del Carril, 13</a>
+<a class="llama" rel="tel:968705063">[Caravaca de la Cruz] C/ Gran Vía, 8</a>
+<a class="llama" rel="tel:968321532">[Cartagena] Alameda de San Antón, 8-10</a>
+<a class="llama" rel="tel:968320019">[Cartagena] C/ Puerta de Murcia, 1</a>
+<a class="llama" rel="tel:968320041">[Cartagena] Paseo de Alfonso XIII, 46</a>
+<a class="llama" rel="tel:968765765">[Cieza] C/ Paseo, 20</a>
+<a class="llama" rel="tel:968716022">[Jumilla] C/ Cánovas del Castillo, 39</a>
+<a class="llama" rel="tel:968477005">[Lorca] Av. del Juan Carlos I, 17</a>
+<a class="llama" rel="tel:968478077">[Lorca] Av. Juan Carlos I, 50</a>
+<a class="llama" rel="tel:968592696">[Mazarron] Av. de la Constitución, 116-118</a>
+<a class="llama" rel="tel:968642141">[Molina de Segura] Av. Madrid, 3</a>
+<a class="llama" rel="tel:968389640">[Molina de Segura] Paseo de los Rosales, 25</a>
+<a class="llama" rel="tel:968272750">[Murcia] Av. de Juan Carlos I, 26</a>
+<a class="llama" rel="tel:968270054">[Murcia] Av. de la Constitución, 11</a>
+<a class="llama" rel="tel:968270053">[Murcia] Av. de la Libertad, 4</a>
+<a class="llama" rel="tel:968270554">[Murcia] Av. Primo de Rivera, 15</a>
+<a class="llama" rel="tel:968354025">[Murcia] C/ Floridablanca, 8</a>
+<a class="llama" rel="tel:968354024">[Murcia] Pza. Hernández Amores, 3</a>
+<a class="llama" rel="tel:968205169">[Murcia] Ronda de Levante, 49</a>
+<a class="llama" rel="tel:968226223">[Murcia] San Pedro, 7</a>
+<a class="llama" rel="tel:968191880">[San Javier] Ctra. de San Pedro, 5</a>
+<a class="llama" rel="tel:968178261">[San Pedro del Pinatar] C/ Emilio Castelar, 46</a>
+<a class="llama" rel="tel:968585056">[Torre-Pacheco] Av. de la Estación, 32</a>
+<a class="llama" rel="tel:968752520">[Yecla] C/ San José, 55-57</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

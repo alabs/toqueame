@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Tarragona</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:977702833">[Amposta] Av. la Rapita, 34</a>
+<a class="llama" rel="tel:977706106">[Amposta] C/ Alcalde Palau, 56-58</a>
+<a class="llama" rel="tel:977699002">[Calafell] Av. de Sant Joan de Deu, 34</a>
+<a class="llama" rel="tel:977369009">[Cambrils] C/ Consolat de Mar, 82</a>
+<a class="llama" rel="tel:977368031">[Cambrils] Plaça Constitucio, 7-8</a>
+<a class="llama" rel="tel:977159164">[Cunit] C/ Barcelona, 48-54</a>
+<a class="llama" rel="tel:977157009">[El Vendrell] C/ Prat de la Riba, 10</a>
+<a class="llama" rel="tel:977154052">[El Vendrell] Dels Cafes, 17-19</a>
+<a class="llama" rel="tel:977875007">[Montblanc] C/ Ribe, 30</a>
+<a class="llama" rel="tel:977414004">[Mora D'Ebre] C/ Antoni Asens, 10</a>
+<a class="llama" rel="tel:977338045">[Reus] Paseo de la Misericordia, 1</a>
+<a class="llama" rel="tel:977338053">[Reus] Passeig de Mata, 40</a>
+<a class="llama" rel="tel:977328434">[Reus] Passeig Prim, 14</a>
+<a class="llama" rel="tel:977328433">[Reus] Passeig Prim, 38</a>
+<a class="llama" rel="tel:977127050">[Reus] Pza. de Prim, 4</a>
+<a class="llama" rel="tel:977353160">[Salou] Barcelona, 56-Edif. Velazque Edif. Velázquez</a>
+<a class="llama" rel="tel:977388542">[Salou] C/ Barcelona, 12</a>
+<a class="llama" rel="tel:977743460">[Sant Carles de la Rapita] Pza. de Carles III, 14</a>
+<a class="llama" rel="tel:977250296">[Tarragona] Av. Prat de la Riba, 15</a>
+<a class="llama" rel="tel:977250140">[Tarragona] Bloc Costa Rica Esc. A</a>
+<a class="llama" rel="tel:977225634">[Tarragona] Pza. General Prim, 4-5</a>
+<a class="llama" rel="tel:977219735">[Tarragona] Pza. Imperial Tarraco, 2</a>
+<a class="llama" rel="tel:977250060">[Tarragona] Rambla Nova, 56</a>
+<a class="llama" rel="tel:977646012">[Torredembarra] Av. de Catalunya, 2</a>
+<a class="llama" rel="tel:977640100">[Torredembarra] Passeig de la Sort, 19-21</a>
+<a class="llama" rel="tel:977448731">[Tortosa] Pza. Alfonso XII, 3</a>
+<a class="llama" rel="tel:977449042">[Tortosa] Pza. d'Alfons XII, 7</a>
+<a class="llama" rel="tel:977721536">[Ulldecona] C/ Major, 91</a>
+<a class="llama" rel="tel:977609006">[Valls] C/ Patí, 16</a>
+<a class="llama" rel="tel:977609851">[Valls] Pza. del Pati, 12</a>
+<a class="llama" rel="tel:977395700">[Vila-Seca] C/ Segre</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

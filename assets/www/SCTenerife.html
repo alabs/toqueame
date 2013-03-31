@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">S.C. Tenerife</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:922798020">[Arona] C/ General Franco, 8 (Playa de los Cristianos)</a>
+<a class="llama" rel="tel:922753423">[Arona] C/ Noelia Alonso Cabrera (Residencial Las Viñas, Loc.7)</a>
+<a class="llama" rel="tel:922583236">[Candelaria] Rambla los Menceyes, 12</a>
+<a class="llama" rel="tel:922393562">[Granadilla de Abona] Av. de Santa Cruz, 188</a>
+<a class="llama" rel="tel:922328036">[La Orotava] C/ San Juan Bosco</a>
+<a class="llama" rel="tel:922342745">[Los Realejos] Av. de Canarias, 35 (Edif. Res. Real)</a>
+<a class="llama" rel="tel:922388807">[Puerto de la Cruz] Av. de la Familia Betancourt y Mol, 11 (Ant. Av. del Generalísimo)</a>
+<a class="llama" rel="tel:922645037">[San Cristobal de la Laguna] Av. de los Menceyes. 329-331</a>
+<a class="llama" rel="tel:922825920">[San Cristobal de la Laguna] C/ La Carrera, 36</a>
+<a class="llama" rel="tel:922531839">[Santa Cruz de Tenerife] C/ Imeldo Serís, 2</a>
+<a class="llama" rel="tel:922534970">[Santa Cruz de Tenerife] C/ Puerta Canseco, 71</a>
+<a class="llama" rel="tel:922237700">[Santa Cruz de Tenerife] C/ Tomé Cano, 2</a>
+<a class="llama" rel="tel:922534950">[Santa Cruz de Tenerife] Rambla Pulido, 72</a>
+<a class="llama" rel="tel:922242677">[Santa Cruz de Tenerife] Valentin Sanz, 9</a>
+<a class="llama" rel="tel:922625666">[Taco] Av. de Taco, 140</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

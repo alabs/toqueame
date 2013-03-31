@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Coruña</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:981145163">[A Coruña] Av. de Gran Canaria, 21</a>
+<a class="llama" rel="tel:981173288">[A Coruña] Av. de Monelos, 103-105</a>
+<a class="llama" rel="tel:981145992">[A Coruña] Av. de Rubine, 6</a>
+<a class="llama" rel="tel:981148390">[A Coruña] C/ Barcelona, 27</a>
+<a class="llama" rel="tel:981168095">[A Coruña] C/ Fernández Latorre, 132</a>
+<a class="llama" rel="tel:981126050">[A Coruña] C/ Juana de Vega, 13</a>
+<a class="llama" rel="tel:981148388">[A Coruña] C/ Juan Flórez, 24</a>
+<a class="llama" rel="tel:981217870">[A Coruña] C/ la Torre, 48</a>
+<a class="llama" rel="tel:981169157">[A Coruña] Ronda de Outeiro, 178</a>
+<a class="llama" rel="tel:981704006">[Carballo] C/ Desiderio Varela, 6</a>
+<a class="llama" rel="tel:981654604">[Culleredo] Pza. de Europa, 1 (O Burgo)</a>
+<a class="llama" rel="tel:981364044">[Ferrol] C/ Dolores, 46</a>
+<a class="llama" rel="tel:981369438">[Ferrol] Rubalcava, 26</a>
+<a class="llama" rel="tel:981397041">[Naron] Ctra. de la Castela, 895</a>
+<a class="llama" rel="tel:981173504">[Ponte Da Pedra] C/ Cristino Álvarez Hernández, 1</a>
+<a class="llama" rel="tel:981619111">[Sada] Av. de Barrie de la Maza, 35</a>
+<a class="llama" rel="tel:981835405">[Santa Eugenia de Ribeira] Av. do Malecón, 2</a>
+<a class="llama" rel="tel:981552280">[Santiago de Compostela] C/ Hórreo, 9 y 11</a>
+<a class="llama" rel="tel:981552210">[Santiago de Compostela] C/ Lisboa, 4</a>
+<a class="llama" rel="tel:981569918">[Santiago de Compostela] C/ Rosalia de Castro, 87</a>
+<a class="llama" rel="tel:981552710">[Santiago de Compostela] Doutor Teixeiro, 39</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

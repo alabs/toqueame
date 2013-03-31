@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Cádiz</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:956587014">[Algeciras] C/ Alfonso XI, 8</a>
+<a class="llama" rel="tel:956587027">[Algeciras] C/ José Aantonio Primo de Rivera, 9</a>
+<a class="llama" rel="tel:956587018">[Algeciras] Urb. Los Sauces, Bl. 2 (Ctra. de Cádiz, s/n)</a>
+<a class="llama" rel="tel:956717904">[Arcos de la Frontera] Av. de Muñoz Vázquez, 20</a>
+<a class="llama" rel="tel:956205951">[Cadiz] Av. Andalucia, 85</a>
+<a class="llama" rel="tel:956290694">[Cadiz] Av. de Ana de Viya, 7</a>
+<a class="llama" rel="tel:956292192">[Cadiz] Av. de Andalucía, 69</a>
+<a class="llama" rel="tel:956290421">[Cadiz] Av. de Cayetano del Toro, 27</a>
+<a class="llama" rel="tel:956290526">[Cadiz] C/ Nueva, 2</a>
+<a class="llama" rel="tel:956490004">[Chiclana de la Frontera] C/ de la Plaza, 11</a>
+<a class="llama" rel="tel:956408406">[Chiclana de la Frontera] Pza. Retortillo, 2</a>
+<a class="llama" rel="tel:956456238">[Conil de la Frontera] C/ San Sebastián, s/n</a>
+<a class="llama" rel="tel:956319657">[Jerez de la Frontera] Av. del Alcalde Álvaro Domecq (Urb. Parque Avenida)</a>
+<a class="llama" rel="tel:956318723">[Jerez de la Frontera] Av.descartes,2 Ed.j.del Ingles-Edif. Jardín</a>
+<a class="llama" rel="tel:956329280">[Jerez de la Frontera] C/ Larga, 16</a>
+<a class="llama" rel="tel:956391054">[Jerez de la Frontera] Pza. de Biarritz (Av. de Arcos de la Frontera)</a>
+<a class="llama" rel="tel:956329400">[Jerez de la Frontera] Pza. de la Madre de Dios, 9</a>
+<a class="llama" rel="tel:956690009">[La Línea de la Concepción] Pza. de la Iglesia, 1</a>
+<a class="llama" rel="tel:956860225">[Puerto de Santa Maria] Av. del Ejército, 10</a>
+<a class="llama" rel="tel:956860140">[Puerto de Santa Maria] C/ Virgen de los Milagros,87</a>
+<a class="llama" rel="tel:956804266">[Puerto Real] C/ de la Plaza, 128</a>
+<a class="llama" rel="tel:956846364">[Rota] Av. de la Marina, 33</a>
+<a class="llama" rel="tel:956800003">[San Fernando] C/ Real, 46</a>
+<a class="llama" rel="tel:956593220">[San Fernando] Real, 24</a>
+<a class="llama" rel="tel:956385008">[Sanlucar de Barrameda] C/ Ancha, 9</a>
+<a class="llama" rel="tel:956385442">[Sanlucar de Barrameda] C/ Hermano Fermín, s/n (Edif.Zafiro)</a>
+<a class="llama" rel="tel:956627609">[Tarifa] C/ Batalla del Salado, 1</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

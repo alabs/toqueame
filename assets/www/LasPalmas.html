@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Las Palmas</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:928189427">[Agüimes] Av. de Ansite, 90</a>
+<a class="llama" rel="tel:928844709">[Arrecife] Av. Jose Antonio, 105</a>
+<a class="llama" rel="tel:928597022">[Arrecife] C/ León y Castillo, 2</a>
+<a class="llama" rel="tel:928634079">[Arucas] C/ Doctor Fernando Caubín Ponce, s/n (Esq. C/ Poeta Pedro Lezcano)</a>
+<a class="llama" rel="tel:928634085">[Arucas] C/ León y Castillo, 9</a>
+<a class="llama" rel="tel:928535954">[Corralejo] Av. de Nuestra Señora del Carmen, 15</a>
+<a class="llama" rel="tel:928786023">[El Carrizal] Av. de Carlos V, 74</a>
+<a class="llama" rel="tel:928888272">[Galdar] C/ Capitán Quesada, 37</a>
+<a class="llama" rel="tel:928427655">[Las Palmas de Gran Canaria] Av. del Pintor Felo Monzón, s/n. Bl. 2, Loc. 7 y 8</a>
+<a class="llama" rel="tel:928491175">[Las Palmas de Gran Canaria] C/ José Franchy Roca, 13</a>
+<a class="llama" rel="tel:928471290">[Las Palmas de Gran Canaria] C/ Poeta Agustín Millares Sall, 3</a>
+<a class="llama" rel="tel:928391019">[Las Palmas de Gran Canaria] C/ Triana, 98</a>
+<a class="llama" rel="tel:928276912">[Las Palmas de Gran Canaria] General Vives, 54</a>
+<a class="llama" rel="tel:928298339">[Las Palmas de Gran Canaria] Pintor Juan Guillermo, 5</a>
+<a class="llama" rel="tel:928265008">[Las Palmas de Gran Canaria] Pza. de España,1</a>
+<a class="llama" rel="tel:928541761">[Morro Jable] C/ Gambuesas, 1</a>
+<a class="llama" rel="tel:928519275">[Playa Blanca] El Varadero, 4-Local 7 Local 7</a>
+<a class="llama" rel="tel:928596093">[Puerto del Carmen] Av. de Juan Carlos I, 35</a>
+<a class="llama" rel="tel:928533630">[Puerto del Rosario] Av. Primero de Mayo, 56</a>
+<a class="llama" rel="tel:928779874">[San Bartolomé de Tirajana] C.C. San Fernando (Av. de Tirajana, s/n)</a>
+<a class="llama" rel="tel:928684465">[Telde] Andres Manjon, 6</a>
+<a class="llama" rel="tel:928139100">[Telde] Pza. de San Gregorio, s/n</a>
+<a class="llama" rel="tel:928755171">[Vecindario] Av. Canarias, 237</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

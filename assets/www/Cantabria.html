@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Cantabria</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:942628400">[Ampuero] C/ Melchor Torio, 3</a>
+<a class="llama" rel="tel:942859012">[Castro Urdiales] Av. de la Constitución, 10</a>
+<a class="llama" rel="tel:942652800">[Colindres] C/ Magdalena, 4</a>
+<a class="llama" rel="tel:942544252">[El Astillero] C/ San José, 27</a>
+<a class="llama" rel="tel:942628011">[Laredo] C/ López de Seña, 12-A</a>
+<a class="llama" rel="tel:942834000">[Los Corrales de Buelna] Av. de Cantabria, 15</a>
+<a class="llama" rel="tel:942253076">[Maliaño] C/ Menéndez Pelayo, 10</a>
+<a class="llama" rel="tel:942269044">[Muriedas] Av. de la Concordia, 3</a>
+<a class="llama" rel="tel:942738020">[Potes] C/ La Serna, 7</a>
+<a class="llama" rel="tel:942821820">[Puente San Miguel] Av. de Oviedo, 180-F</a>
+<a class="llama" rel="tel:942774020">[Reinosa] C/ Mayor, 1</a>
+<a class="llama" rel="tel:942715030">[San Vicente de la Barquera] Av. de Miramar, 3</a>
+<a class="llama" rel="tel:942582021">[Santa Cruz de Bezana] C/ Respuela, 6</a>
+<a class="llama" rel="tel:942318130">[Santander] C/ Atilano Rodríguez, 9</a>
+<a class="llama" rel="tel:942318140">[Santander] C/ Casimiro Sainz, 7</a>
+<a class="llama" rel="tel:942318020">[Santander] C/ Marcelino Sanz de Sautuola, 15</a>
+<a class="llama" rel="tel:942240050">[Santander] C/ San Fernando, 28</a>
+<a class="llama" rel="tel:942367220">[Santander] Paseo Pereda,18</a>
+<a class="llama" rel="tel:942628232">[Santoña] Pza. San Antonio, s/n.</a>
+<a class="llama" rel="tel:942517730">[Saron] Av. Justina y Berdía, 32</a>
+<a class="llama" rel="tel:942511900">[Somo] Av. de Trasmiera, 1</a>
+<a class="llama" rel="tel:942811822">[Suances] Pza. Viares, 12</a>
+<a class="llama" rel="tel:942801482">[Torrelavega] Jose Maria Pereda, 5</a>
+<a class="llama" rel="tel:942835108">[Torrelavega] Pza. Tres de Noviembre, 1</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

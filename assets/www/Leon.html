@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">León</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:987604100">[Astorga] Pza. de Santocildes, 4</a>
+<a class="llama" rel="tel:987656043">[La Bañeza] C/ Astorga, 5</a>
+<a class="llama" rel="tel:987875611">[Leon] Ancha, 20</a>
+<a class="llama" rel="tel:987875360">[Leon] Av. de los Reyes Leoneses, 8 (Edificio Parasol)</a>
+<a class="llama" rel="tel:987875911">[Leon] Av. Ordoño II, 20</a>
+<a class="llama" rel="tel:987849250">[Leon] C/ Páramo, 1</a>
+<a class="llama" rel="tel:987219004">[Leon] C/ Velázquez, 10</a>
+<a class="llama" rel="tel:987875370">[Leon] Gran Vía de San Marcos, 3</a>
+<a class="llama" rel="tel:987456370">[Ponferrada] Av. de España, 11</a>
+<a class="llama" rel="tel:987409637">[Ponferrada] Av. Perez Colino, 22</a>
+<a class="llama" rel="tel:987456686">[Ponferrada] Bulevar Juan Carlos I Rey de España</a>
+<a class="llama" rel="tel:987456380">[Ponferrada] C/ Ancha, 20</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

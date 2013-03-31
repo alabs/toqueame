@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Toledo</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:925506950">[Añover de Tajo] Pza. de España, 5</a>
+<a class="llama" rel="tel:925395000">[Bargas] C/ Real, 7</a>
+<a class="llama" rel="tel:925467504">[Consuegra] C/ Arco, 12</a>
+<a class="llama" rel="tel:925776003">[Fuensalida] Pza. de José Antonio, 3</a>
+<a class="llama" rel="tel:925513230">[Illescas] Av. de Castilla-La Mancha, 82</a>
+<a class="llama" rel="tel:925532010">[Illescas] C/ Real, 64</a>
+<a class="llama" rel="tel:925776506">[La Puebla de Montalban] C/ Manzanilla, 10</a>
+<a class="llama" rel="tel:925322503">[Los Yebenes] Calleja de la Fuente</a>
+<a class="llama" rel="tel:925467010">[Madridejos] Pasaje de Sancho Álvarez, 11</a>
+<a class="llama" rel="tel:925560600">[Miguel Esteban] C/ Santa Ana, 14</a>
+<a class="llama" rel="tel:925360950">[Mocejon] Pza. de España, 6</a>
+<a class="llama" rel="tel:925322004">[Mora de Toledo] C/ Ciudad de Martos, 1</a>
+<a class="llama" rel="tel:925156000">[Ocaña] C/ Mayor, 11</a>
+<a class="llama" rel="tel:925560003">[Quintanar de la Orden] C/ Bajada de la Iglesia, 2</a>
+<a class="llama" rel="tel:925522666">[Recas] C/ Generalísimo, 2</a>
+<a class="llama" rel="tel:918088942">[Seseña] C/ la Vega, s/n</a>
+<a class="llama" rel="tel:925395308">[Sonseca] C/ Arroyada, 76</a>
+<a class="llama" rel="tel:925721586">[Talavera de la Reina] Av. de Francisco Aguirre</a>
+<a class="llama" rel="tel:925720033">[Talavera de la Reina] Av. de la Constitución, 17</a>
+<a class="llama" rel="tel:925720068">[Talavera de la Reina] Av. de Pío XII, 4</a>
+<a class="llama" rel="tel:925720077">[Talavera de la Reina] Av. de Pío XII, 85</a>
+<a class="llama" rel="tel:925720070">[Talavera de la Reina] C/ Portiña del Salvador, 36</a>
+<a class="llama" rel="tel:925720074">[Talavera de la Reina] C/ Prado, 4</a>
+<a class="llama" rel="tel:925280088">[Toledo] Av. de Europa</a>
+<a class="llama" rel="tel:925284106">[Toledo] Av. Santa Bárbara, 45</a>
+<a class="llama" rel="tel:925245057">[Toledo] C/ Alberche, 50</a>
+<a class="llama" rel="tel:925284114">[Toledo] C/ Armas, 22</a>
+<a class="llama" rel="tel:925284104">[Toledo] C/ Canarias, 3</a>
+<a class="llama" rel="tel:925284007">[Toledo] C/ Ecuador, 6</a>
+<a class="llama" rel="tel:925245610">[Toledo] C/ Río Alberche, 6</a>
+<a class="llama" rel="tel:925284061">[Toledo] C/ Ronda de Buenavista, 45</a>
+<a class="llama" rel="tel:925775005">[Torrijos] C/ D. Manuel Benayas, 5</a>
+<a class="llama" rel="tel:925560302">[Villacañas] C/ Mayor, 32</a>
+<a class="llama" rel="tel:926581802">[Villafranca de los Caballero] Av. de Castilla-La Mancha, 16</a>
+<a class="llama" rel="tel:925152951">[Villatobas] C/ Mayor, 16</a>
+<a class="llama" rel="tel:925557228">[Yuncos] C/ Real</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

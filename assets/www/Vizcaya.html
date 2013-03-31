@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Vizcaya</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:944914414">[Algorta] C/ Amezti, 3 (Getxo)</a>
+<a class="llama" rel="tel:944180783">[Barakaldo] Av. de Miranda, 2</a>
+<a class="llama" rel="tel:944180320">[Barakaldo] San Juan, 2-4</a>
+<a class="llama" rel="tel:944262780">[Basauri] C/ Virgen de Begoña, 16</a>
+<a class="llama" rel="tel:944266634">[Basauri] Lehendakari Aguirre, 39</a>
+<a class="llama" rel="tel:944473756">[Bilbao] Av. de Madariaga, 14</a>
+<a class="llama" rel="tel:944702040">[Bilbao] C/ Autonomía, 26</a>
+<a class="llama" rel="tel:944597476">[Bilbao] C/ Carmelo, 7</a>
+<a class="llama" rel="tel:944795070">[Bilbao] C/ El Cano, 16</a>
+<a class="llama" rel="tel:944434089">[Bilbao] C/ Gordóniz, 36</a>
+<a class="llama" rel="tel:944255357">[Bilbao] C/ Henao, 5</a>
+<a class="llama" rel="tel:944234455">[Bilbao] C/ Ibáñez de Bilbao, 17</a>
+<a class="llama" rel="tel:944794690">[Bilbao] C/ Padre Lojendio, 5</a>
+<a class="llama" rel="tel:944396016">[Bilbao] C/ Rodríguez Arias, 57</a>
+<a class="llama" rel="tel:944484050">[Bilbao] Pza. de San Pedro, 2</a>
+<a class="llama" rel="tel:946215003">[Durango] Av. Askatasun Etorbidea, 3</a>
+<a class="llama" rel="tel:946232740">[Durango] Av. de Landako, 3</a>
+<a class="llama" rel="tel:944560396">[Galdakao] Lapurdi Kalea, 16-18</a>
+<a class="llama" rel="tel:944805098">[Getxo] C/ Las Mercedes, 30</a>
+<a class="llama" rel="tel:944804110">[Las Arenas] C/ Mayor, 6</a>
+<a class="llama" rel="tel:944630086">[Leioa] Pza. de José Ramón Aketxe, 7</a>
+<a class="llama" rel="tel:944724363">[Portugalete] Av. de Carlos VII, 3</a>
+<a class="llama" rel="tel:944938465">[Santurtzi] Pza. de Juan José Mendizábal</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

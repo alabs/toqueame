@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Almería</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:950604830">[Adra] C/ Natalio Rivas, 13</a>
+<a class="llama" rel="tel:950622050">[Almeria] Av. del Mediterráneo, 286</a>
+<a class="llama" rel="tel:950624604">[Almeria] Av. del Mediterraneo, S/N-Hotel Husa Gr</a>
+<a class="llama" rel="tel:950280543">[Almeria] Av. Federico Garcia Lorca, 7</a>
+<a class="llama" rel="tel:950621105">[Almeria] C/ Doctor Gregorio Marañón, 6</a>
+<a class="llama" rel="tel:950621003">[Almeria] Paseo de Almería, 55</a>
+<a class="llama" rel="tel:950488275">[El Ejido] Ctra. de Málaga-Almería, 317 (Bulevar de El Ejido)</a>
+<a class="llama" rel="tel:950472085">[Mojacar] Paseo del Mediterráneo, 345</a>
+<a class="llama" rel="tel:950342298">[Roquetas de Mar] Av. de Carlos III, 517</a>
+<a class="llama" rel="tel:950328830">[Roquetas de Mar] Av. de Roquetas de Mar, 59</a>
+<a class="llama" rel="tel:950329226">[Roquetas de Mar] Av. Roquetas de Mar, 5</a>
+<a class="llama" rel="tel:950393234">[Vera] C/ Mayor, 37</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

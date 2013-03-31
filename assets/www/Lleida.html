@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Lleida</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:973443843">[Balaguer] Pza. de Pau Casals, 5</a>
+<a class="llama" rel="tel:973355237">[La Seu D'Urgell] Av. Pau Clarís, 48</a>
+<a class="llama" rel="tel:973289280">[Lleida] Av. Blondel, 68</a>
+<a class="llama" rel="tel:973208360">[Lleida] Av. Les Garrigues, 5</a>
+<a class="llama" rel="tel:973725014">[Lleida] C/ Bisbe Ruano, 4</a>
+<a class="llama" rel="tel:973725042">[Lleida] C/ Príncipe de Viana, 70</a>
+<a class="llama" rel="tel:973225681">[Lleida] Humbert Torres,2-E.prat de la Esq. Prat De La</a>
+<a class="llama" rel="tel:973725104">[Lleida] Rambla Ferrán, 24</a>
+<a class="llama" rel="tel:973604884">[Mollerussa] C/ Ferrán Puig, 3</a>
+<a class="llama" rel="tel:973502001">[Tarrega] C/ Sant Joan, 17</a>
+<a class="llama" rel="tel:973641379">[Vielha] Pza. de España, 1</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

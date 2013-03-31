@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Huelva</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:959451991">[Almonte] Av. de la Virgen, 19</a>
+<a class="llama" rel="tel:959322986">[Ayamonte] C/ Médico Rey García, 1 (Edif. Gardenio)</a>
+<a class="llama" rel="tel:959393881">[Cartaya] Av. de Huelva, 1</a>
+<a class="llama" rel="tel:959543015">[Huelva] Av. del Alcalde Federico Molina, 48</a>
+<a class="llama" rel="tel:959357311">[Huelva] C/ Ángel Serradilla, 6</a>
+<a class="llama" rel="tel:959540081">[Huelva] C/ Ruiz de Alda, 5</a>
+<a class="llama" rel="tel:959540043">[Huelva] Pza. de las Monjas, 1</a>
+<a class="llama" rel="tel:959344485">[Isla Cristina] Av. de España, 9</a>
+<a class="llama" rel="tel:959645180">[Lepe] C/ Joan Miró, 19</a>
+<a class="llama" rel="tel:959659117">[Punta Umbria] Av. de Andalucía, 6</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Toqueame</title>
+	<link href="numeros.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="chuleton">
+		<div id="barrita">
+			<div id="atras"><a href="javascript:history.back()">←</a></div>
+			<div id="provincia">Málaga</div>
+		</div>
+        	<div id="contador">
+        		Toqueados a <span id="cuantos">0</span> de <span id="van">0</span>
+        	</div>
+        </div>
+        <div id="logo">
+        	<img src="loguibanki.png" />
+        </div>
+        
+        <div id="numeros">
+<a class="llama" rel="tel:952417199">[Alhaurin de la Torre] Av. de la Ciudad de Melilla</a>
+<a class="llama" rel="tel:952706010">[Antequera] C/ Infante Don Fernando, 36</a>
+<a class="llama" rel="tel:952705001">[Antequera] San Bartolome, 2</a>
+<a class="llama" rel="tel:952576396">[Arroyo de la Miel] Blas Infante, 10</a>
+<a class="llama" rel="tel:952574145">[Arroyo de la Miel] C/ Vicente Alexandre, 1 (Benalmádena)</a>
+<a class="llama" rel="tel:952805500">[Estepona] Av. de España, 1 (edf.madrid (edf.madrid)</a>
+<a class="llama" rel="tel:952808050">[Estepona] Av. de Juan Carlos I, 3</a>
+<a class="llama" rel="tel:952587000">[Fuengirola] Av. de Jesús Santos Rein,1</a>
+<a class="llama" rel="tel:952667923">[Fuengirola] Camino de Coin, 5</a>
+<a class="llama" rel="tel:952587722">[La Cala] Bulevar la Cala (Edif. del Sol, Loc. B-30)</a>
+<a class="llama" rel="tel:952071710">[Malaga] Atarazanas, 2</a>
+<a class="llama" rel="tel:952175084">[Malaga] Av. de Imperio Argentina, 15</a>
+<a class="llama" rel="tel:952207006">[Malaga] Av. de Juan Sebastián Elcano, 166</a>
+<a class="llama" rel="tel:952363244">[Malaga] Av. de la Aurora, 34</a>
+<a class="llama" rel="tel:952040305">[Malaga] Av. de Velázquez, 60</a>
+<a class="llama" rel="tel:952629999">[Malaga] Bulevar Louis Pasteur, 8-10</a>
+<a class="llama" rel="tel:952120087">[Malaga] C/ Alameda de Colón, 10</a>
+<a class="llama" rel="tel:952363182">[Malaga] C/ Ayala, 80</a>
+<a class="llama" rel="tel:952640050">[Malaga] C/ Compositor Lehmberg Ruiz, 9</a>
+<a class="llama" rel="tel:952044969">[Malaga] C/ Cuarteles, 62</a>
+<a class="llama" rel="tel:952070046">[Malaga] C/ Mármoles, 60</a>
+<a class="llama" rel="tel:952070345">[Malaga] C/ Martínez de la Rosa, 169</a>
+<a class="llama" rel="tel:952120237">[Malaga] C/ Vélez-Málaga, 11</a>
+<a class="llama" rel="tel:952071740">[Malaga] Hilera, 7</a>
+<a class="llama" rel="tel:952060000">[Malaga] Pza. de la Constitución, 9</a>
+<a class="llama" rel="tel:952657091">[Malaga] Pza. de Olletas, 4</a>
+<a class="llama" rel="tel:952765075">[Marbella] Av. de Ricardo Soriano, 43</a>
+<a class="llama" rel="tel:952901707">[Marbella] Av. General López Domínguez, 6</a>
+<a class="llama" rel="tel:952766877">[Marbella] Av. Ricardo Soriano, 49</a>
+<a class="llama" rel="tel:952799580">[Marbella] Paseo de las Palmeras, 5 (San Pedro de Alcántara)</a>
+<a class="llama" rel="tel:952198850">[Mijas] Av. de Mijas, 25</a>
+<a class="llama" rel="tel:952966103">[Nerja] Pza. de la Ermita, 15</a>
+<a class="llama" rel="tel:952978152">[Rincon de la Victoria] Av. Mediterráneo, 135</a>
+<a class="llama" rel="tel:952187006">[Ronda] C/ Espinel, 29</a>
+<a class="llama" rel="tel:952853129">[San Pedro de Alcantara] C/ Marqués del Duero, 10</a>
+<a class="llama" rel="tel:952545134">[Torre del Mar] Av. Andalucia, 97-Edif. Hile Edf. Hilero</a>
+<a class="llama" rel="tel:952546989">[Torre del Mar] Av. de Andalucía, 86</a>
+<a class="llama" rel="tel:952057480">[Torremolinos] Av. Palma de Mallorca, 16</a>
+<a class="llama" rel="tel:952057380">[Torremolinos] C/ Palma de Mallorca, 17</a>
+<a class="llama" rel="tel:952558030">[Vélez-Málaga] C/ Canalejas, 29</a>
+		</div>
+        
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('ready', function() {
+		$('#van').text($('.llama').length);		
+        	$('.llama').on('click', function(e) {
+        		var cuantosvan = parseInt($('#cuantos').text()) + 1;
+        		$('#cuantos').text(cuantosvan);
+        		$(this).hide();
+        		e.preventDefault();
+        		var adonde = $(this).attr('rel');
+        		document.location.href = adonde;
+        		
+        	});
+        });
+        </script>
+    </body>
+</html>
+
